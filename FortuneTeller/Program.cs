@@ -14,8 +14,7 @@ namespace FortuneTeller
             string firstName;
             string lastName;
             int age;
-            string birthMonth;
-            int birthMonthNumber = 0;
+            int birthMonth;
             string favoriteColor;
             int numberSiblings;
             string input;
@@ -30,20 +29,35 @@ namespace FortuneTeller
             firstName = Console.ReadLine();
             Console.Write("What is your last name? ");
             lastName = Console.ReadLine();
-            Console.Write("What is your age? (Please enter a number between 1-120) ");
-            input = Console.ReadLine();
-            Int32.TryParse(input, out age);
-            Console.Write("What is your birth month? ");
-            birthMonth = Console.ReadLine();
-            Console.WriteLine("What is your favorite color from the following list? ");
-            Console.Write("Red, Orange, Yellow, Green, Blue, Indigo, Violet: ");
+            Console.Write("What is your age? (Please enter a number): ");
+            age = int.Parse(Console.ReadLine());
+            Console.Write("What is your birth month? (Please enter as a number between 1 and 12): ");
+            birthMonth = int.Parse(Console.ReadLine());
+            Console.WriteLine("What is your favorite ROYGBIV color? ");
+            Console.Write("Please enter R, O, Y, G, B, I, V or Help for a list of colors: ");
             favoriteColor = Console.ReadLine();
+
+            //If help is entered, display help menu and ask user again for a color
+            if(favoriteColor.ToLower() == "help")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Enter R if your favorite color is RED");
+                Console.WriteLine("Enter O if your favorite color is ORANGE");
+                Console.WriteLine("Enter Y if your favorite color is YELLOW");
+                Console.WriteLine("Enter G if your favorite color is GREEN");
+                Console.WriteLine("Enter B if your favorite color is BLUE");
+                Console.WriteLine("Enter I if your favorite color is INDIGO (dark blue)");
+                Console.WriteLine("Enter V if your favorite color is VIOLET (purple)");
+                Console.WriteLine();
+                Console.WriteLine("What is your favorite ROYGBIV color? ");
+                Console.Write("Please enter R, O, Y, G, B, I, or V: ");
+                favoriteColor = Console.ReadLine();
+            }
             Console.Write("How many siblings do you have? ");
-            input = Console.ReadLine();
-            Int32.TryParse(input, out numberSiblings);
+            numberSiblings = int.Parse(Console.ReadLine());
 
             //Variables for the fortune
-            int yrsToRetire = 4;
+            int yrsToRetire;
             string vacHome;
             string transportation;
             string moneyInBank;
@@ -52,6 +66,10 @@ namespace FortuneTeller
             if (age % 2 == 0)
             {
                 yrsToRetire = 23;
+            }
+            else
+            {
+                yrsToRetire = 6;
             }
 
             //Vacation home
@@ -80,69 +98,73 @@ namespace FortuneTeller
                         vacHome = "Cancun";
                         break;
                     default:
-                        vacHome = "I don't know";
+                        vacHome = "an unknown location";
                         break;
                 }
             }
 
             //Tranportation
-            switch (favoriteColor)
+            switch (favoriteColor.ToLower())
             {
-                case "R":
+                case "r":
                     transportation = "Corvette";
                     break;
-                case "O":
+                case "o":
                     transportation = "Subaru";
                     break;
-                case "Y":
+                case "y":
                     transportation = "Vespa";
                     break;
-                case "G":
+                case "g":
                     transportation = "mini van";
                     break;
-                case "B":
+                case "b":
                     transportation = "Camaro";
                     break;
-                case "I":
+                case "i":
                     transportation = "Tesla";
                     break;
-                case "V":
+                case "v":
                     transportation = "Saab";
                     break;
                 default:
-                    transportation = "I don't know";
+                    transportation = "unknown vehicle";
                     break;
             }
 
             //Money in Bank
-            if (birthMonthNumber < 1 || birthMonthNumber > 12)
+            if (birthMonth < 1 || birthMonth > 12)
             {
                 moneyInBank = "$0.00";
             }
-            else if (birthMonthNumber >= 1 && birthMonthNumber <= 4)
+            else if (birthMonth >= 1 && birthMonth <= 4)
             {
                 moneyInBank = "$10,483";
             }
-            else if (birthMonthNumber >= 5 && birthMonthNumber <= 8)
+            else if (birthMonth >= 5 && birthMonth <= 8)
             {
                 moneyInBank = "$230,230";
             }
-            else if (birthMonthNumber >= 9 && birthMonthNumber <= 12)
+            else if (birthMonth >= 9 && birthMonth <= 12)
             {
-                moneyInBank = "41,623,000";
+                moneyInBank = "$41,623,000";
             }
             else
             {
-                moneyInBank = "I don't know";
+                moneyInBank = "an unknown amount";
             }
 
             //Output the fortune
-            Console.WriteLine("{0} {1} will retire in {2} years\n" +
+            Console.WriteLine();
+            Console.WriteLine("******************************");
+            Console.WriteLine("{0} {1} will retire in {2} year(s)\n" +
                 "with {3} in the bank,\n" +
                 "a vacation home in {4},\n" +
-                "and a {5}.", 
+                "and a(n) {5}.", 
                 firstName, lastName, yrsToRetire, moneyInBank, vacHome, transportation);
-            Console.ReadKey();
-        }
+            Console.WriteLine("******************************");
+
+        } //Main()
+
     }
 }

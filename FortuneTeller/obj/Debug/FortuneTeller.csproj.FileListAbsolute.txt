@@ -1,0 +1,7 @@
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\obj\Debug\FortuneTeller.csprojAssemblyReference.cache
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\obj\Debug\FortuneTeller.csproj.CoreCompileInputs.cache
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\bin\Debug\FortuneTeller.exe.config
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\bin\Debug\FortuneTeller.exe
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\bin\Debug\FortuneTeller.pdb
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\obj\Debug\FortuneTeller.exe
+C:\Users\WeCanCodeIT\source_code\NET_Framework\FortuneTeller\FortuneTeller\obj\Debug\FortuneTeller.pdb

@@ -17,14 +17,25 @@ namespace FortuneTeller
             int birthMonth;
             string favoriteColor;
             int numberSiblings;
-            string input;
+            bool playGame = true;
 
             //Header
             Console.WriteLine("******************************");
             Console.WriteLine("**    THE FORTUNE TELLER    **");
             Console.WriteLine("******************************\n");
 
-            //
+            //User Input
+            Console.WriteLine("I will tell you your fortune based on answers to some questions.");
+            Console.WriteLine("You may enter EXIT at any time to exit the game.");
+            Console.WriteLine("Let's begin...");
+            Console.WriteLine();
+
+
+            do
+            {
+
+            } while (playGame);
+
             Console.Write("What is your first name? ");
             firstName = Console.ReadLine();
             Console.Write("What is your last name? ");

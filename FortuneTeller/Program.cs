@@ -177,5 +177,9 @@ namespace FortuneTeller
 
         } //Main()
 
+        public void exitProgram()
+        {
+            //If the user enters 'exit' at any time, the program will exit
+        }
     }
 }
